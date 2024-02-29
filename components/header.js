@@ -6,10 +6,10 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <div className="contenedor">
+      <div className={`contenedor ${styles.barra}`}>
         <Image src="img/logo.svg" alt="logo" width={300} height={400} />
 
-        <nav>
+        <nav className={styles.navegacion}>
           <Link href="/">Inicio</Link>
           <Link href="/nosotros">Nosotros</Link>
           <Link href="/tienda">Tienda</Link>
