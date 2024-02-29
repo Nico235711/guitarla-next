@@ -1,4 +1,4 @@
-import Image from "next/future/image"
+import Image from "next/image"
 import Link from "next/link"
 import styles from '../styles/header.module.css'
 import { useRouter } from "next/router"
@@ -11,23 +11,21 @@ export default function Header() {
     <header className={styles.header}>
       <div className={`contenedor ${styles.barra}`}>
         <Link href="/">
-          <a>
             <Image src="/img/logo.svg" alt="logo" width={300} height={40} />
-          </a>
         </Link>
 
         <nav className={styles.navegacion}>
-          <Link href="/">
-            <a className={router.pathname === "/" ? styles.active  : ""}>Inicio</a>
+          <Link href="/" className={router.pathname === "/" ? styles.active  : ""}>
+            Inicio
           </Link>
-          <Link href="/nosotros">
-            <a className={router.pathname === "/nosotros" ? styles.active  : ""}>Nosotros</a>
+          <Link href="/nosotros" className={router.pathname === "/nosotros" ? styles.active  : ""}>
+            Nosotros
           </Link>
-          <Link href="/tienda">
-            <a className={router.pathname === "/tienda" ? styles.active  : ""}>Tienda</a>
+          <Link href="/tienda" className={router.pathname === "/tienda" ? styles.active  : ""}>
+            Tienda
           </Link>
-          <Link href="/blog">
-            <a className={router.pathname === "/blog" ? styles.active  : ""}>Blog</a>
+          <Link href="/blog" className={router.pathname === "/blog" ? styles.active  : ""}>
+            Blog
           </Link>
         </nav>
       </div>
