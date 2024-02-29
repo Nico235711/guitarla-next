@@ -1,8 +1,13 @@
+import Link from "next/link"
+import Layout from "../components/layout"
+
 
 const Nosotros = () => {
   
   return (
-    <div>Nosotros</div>
+    <Layout>
+      <Link href="/">Ir al inicio</Link>
+    </Layout>
   )
 }
 
