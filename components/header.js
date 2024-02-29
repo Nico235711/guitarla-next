@@ -1,19 +1,34 @@
-import Image from "next/image"
+import Image from "next/future/image"
 import Link from "next/link"
 import styles from '../styles/header.module.css'
+import { useRouter } from "next/router"
 
 export default function Header() {
+
+  const router = useRouter()
 
   return (
     <header className={styles.header}>
       <div className={`contenedor ${styles.barra}`}>
-        <Image src="img/logo.svg" alt="logo" width={300} height={400} />
+        <Link href="/">
+          <a>
+            <Image src="/img/logo.svg" alt="logo" width={300} height={40} />
+          </a>
+        </Link>
 
         <nav className={styles.navegacion}>
-          <Link href="/">Inicio</Link>
-          <Link href="/nosotros">Nosotros</Link>
-          <Link href="/tienda">Tienda</Link>
-          <Link href="/blog">Blog</Link>
+          <Link href="/">
+            <a className={router.pathname === "/" ? styles.active  : ""}>Inicio</a>
+          </Link>
+          <Link href="/nosotros">
+            <a className={router.pathname === "/nosotros" ? styles.active  : ""}>Nosotros</a>
+          </Link>
+          <Link href="/tienda">
+            <a className={router.pathname === "/tienda" ? styles.active  : ""}>Tienda</a>
+          </Link>
+          <Link href="/blog">
+            <a className={router.pathname === "/blog" ? styles.active  : ""}>Blog</a>
+          </Link>
         </nav>
       </div>
     </header>
