@@ -15,17 +15,17 @@ export default function Header() {
         </Link>
 
         <nav className={styles.navegacion}>
-          <Link href="/" className={router.pathname === "/" ? styles.active  : ""}>
-            Inicio
+          <Link href="/">
+            <a className={router.pathname === "/" ? styles.active  : ""}>Inicio</a>
           </Link>
-          <Link href="/nosotros" className={router.pathname === "/nosotros" ? styles.active  : ""}>
-            Nosotros
+          <Link href="/nosotros">
+            <a className={router.pathname === "/nosotros" ? styles.active  : ""}>Nosotros</a>
           </Link>
-          <Link href="/tienda" className={router.pathname === "/tienda" ? styles.active  : ""}>
-            Tienda
+          <Link href="/tienda">
+            <a className={router.pathname === "/tienda" ? styles.active  : ""}>Tienda</a>
           </Link>
-          <Link href="/blog" className={router.pathname === "/blog" ? styles.active  : ""}>
-            Blog
+          <Link href="/blog">
+            <a className={router.pathname === "/blog" ? styles.active  : ""}>Blog</a>
           </Link>
         </nav>
       </div>

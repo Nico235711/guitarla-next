@@ -8,16 +8,16 @@ export default function Footer() {
       <div className={`contenedor ${styles.contenido}`}>
         <nav className={styles.navegacion}>
           <Link href="/">
-            Inicio
+            <a>Inicio</a>
           </Link>
           <Link href="/nosotros">
-            Nosotros
+            <a>Nosotros</a>
           </Link>
           <Link href="/tienda">
-            Tienda
+            <a>Tienda</a>
           </Link>
           <Link href="/blog">
-            Blog
+            <a>Blog</a>
           </Link>
         </nav>
 
