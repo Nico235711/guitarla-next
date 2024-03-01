@@ -2,8 +2,8 @@ import Layout from "../components/layout"
 import ListadoGuitarras from "../components/listado-guitarras"
 
 
-const Tienda = () => {
-  
+const Tienda = ({ guitarras }) => {
+
   return (
     <Layout
       title="Tienda"
@@ -11,10 +11,22 @@ const Tienda = () => {
     >
       <main className="contenedor">
         <h1 className="heading">Nuesta Coleccion</h1>
-        <ListadoGuitarras />
+        <ListadoGuitarras 
+          guitarras={guitarras}
+        />
       </main>
     </Layout>
   )
 }
 
 export default Tienda
+
+export async function getStaticProps() {
+  const respuesta = await fetch(`${process.env.API_URL}/guitarras?populate=imagen`)
+  const { data: guitarras } = await respuesta.json()
+  return {
+    props: {
+      guitarras
+    }
+  }
+}
