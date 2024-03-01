@@ -21,7 +21,19 @@ const Tienda = ({ guitarras }) => {
 
 export default Tienda
 
-export async function getStaticProps() {
+// cada vez que hagas un cambio tendras que hacer un nuevo build
+// export async function getStaticProps() {
+//   const respuesta = await fetch(`${process.env.API_URL}/guitarras?populate=imagen`)
+//   const { data: guitarras } = await respuesta.json()
+//   return {
+//     props: {
+//       guitarras
+//     }
+//   }
+// }
+
+// cada vez que hagas un cambio no tendras que hacer un nuevo build
+export async function getServerSideProps() {
   const respuesta = await fetch(`${process.env.API_URL}/guitarras?populate=imagen`)
   const { data: guitarras } = await respuesta.json()
   return {
