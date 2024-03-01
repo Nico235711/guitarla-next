@@ -1,4 +1,5 @@
 import Layout from "../components/layout"
+import ListadoGuitarras from "../components/listado-guitarras"
 
 
 const Tienda = () => {
@@ -8,7 +9,10 @@ const Tienda = () => {
       title="Tienda"
       description="Tienda de guitarras, guitarLA, música"
     >
-      <h1>Tienda</h1>
+      <main className="contenedor">
+        <h1 className="heading">Nuesta Coleccion</h1>
+        <ListadoGuitarras />
+      </main>
     </Layout>
   )
 }
